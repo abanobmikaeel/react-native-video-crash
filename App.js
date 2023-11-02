@@ -1,39 +1,46 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, View, Text } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+
 import ScreenA from './ScreenA'
 import ScreenB from './ScreenB'
-import { NavigationContainer } from '@react-navigation/native';
 
 export default function App() {
   const Stack = createNativeStackNavigator();
 
+  function HomeScreen() {
+    return (
+      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Home Screen</Text>
+      </View>
+    );
+  }
+
   return (
-    <View style={styles.container}>
+    // <View style={styles.container}>
       <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen
-          name="ScreenA"
-          component={ScreenA}
-        />
-        <Stack.Screen
-          name="ScreenB"
-          component={ScreenB}
-        />
-      </Stack.Navigator>
+        <Stack.Navigator>
+        {/* <Stack.Screen name="Home" component={HomeScreen} /> */}
+
+          <Stack.Screen
+            name="ScreenA"
+            component={ScreenA}
+          />
+          <Stack.Screen
+            name="ScreenB"
+            component={ScreenB}
+          />
+        </Stack.Navigator>
       </NavigationContainer>
-    </View>
+    // </View>
   );
 }
 
-
-
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+// const styles = StyleSheet.create({
+//   container: {
+//     flex: 1,
+//     backgroundColor: '#222',
+//     alignItems: 'center',
+//     justifyContent: 'center',
+//   },
+// });

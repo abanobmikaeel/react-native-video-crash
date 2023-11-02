@@ -8,8 +8,8 @@ export default function VideoComponent({ uri, showControls }) {
 				uri,
 			}}
 			resizeMode={ResizeMode.COVER}
-			// style={{ width: '100%', height: 300, flex: 1, zIndex: 1 }}
-			controls={false}
+			style={{ width: '100%', flex: 1, zIndex: 1 }}
+			controls={true}
 			repeat={true}
 		/>
 	)

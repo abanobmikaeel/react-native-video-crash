@@ -1,4 +1,4 @@
-import { Button, StyleSheet, View } from 'react-native'
+import { Button, StyleSheet, Text, View } from 'react-native'
 import VideoComponent from './VideoComponent'
 
 export default function ScreenA({ navigation }) {
@@ -10,7 +10,10 @@ export default function ScreenA({ navigation }) {
 				}
 				showControls={true}
 			/>
-			<Button onPress={navigation.navigate('ScreenB')}></Button>
+			<Button
+				title="navigate"
+				onPress={() => navigation.navigate('ScreenB')}
+			></Button>
 		</View>
 	)
 }
@@ -18,8 +21,8 @@ export default function ScreenA({ navigation }) {
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: '#fff',
 		alignItems: 'center',
 		justifyContent: 'center',
+		height: 300,
 	},
 })
